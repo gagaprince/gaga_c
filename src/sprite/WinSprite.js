@@ -2,7 +2,9 @@ var WinSprite = qc.Sprite.extend({
     openFrame:null,
     closeFrame:null,
     mySprite:null,
+    isOpenFlag:null,
     init:function(isOpen){
+        this.isOpenFlag = isOpen;
         this.initSprite(isOpen);
     },
     initSprite:function(isOpen){
@@ -17,6 +19,17 @@ var WinSprite = qc.Sprite.extend({
             this.mySprite = qc.Sprite.create(this.closeFrame);
         }
         this.addChild(this.mySprite);
+    },
+    reflectFlag:function(){
+        this.isOpenFlag = !this.isOpenFlag;
+        if(this.isOpenFlag){
+            this.mySprite.setSpriteFrame(this.openFrame);
+        }else{
+            this.mySprite.setSpriteFrame(this.closeFrame);
+        }
+    },
+    isOpen:function(){
+        return this.isOpenFlag;
     }
 });
 WinSprite.create = function(isOpen){
