@@ -11,12 +11,9 @@ var PanLayer = qc.Layer.extend({
 
     winSpriteMap:{},
 
-    panArray:[
-        0,0,0,
-        1,1,0,
-        0,1,0
-    ],
+    panArray:null,
     init:function(){
+        this.initPanArray();
         this.initFrameCache();
         this.initBg();
         this.initWindow();
@@ -39,7 +36,7 @@ var PanLayer = qc.Layer.extend({
         this.initWindowBegin();
         for(var x=0;x<3;x++){
             for(var y=0;y<3;y++){
-                var winSprite = WinSprite.create(this._findWinValue(x,y));
+                var winSprite = WinSprite.create(this._findPanValue(x,y));
                 this.addChild(winSprite);
                 this.winSpriteMap[x+","+y]=winSprite;
                 winSprite.setPosition(this._giveMePositionByXY(x,y));
@@ -59,7 +56,7 @@ var PanLayer = qc.Layer.extend({
     findWinSprite:function(x,y){
         return this.winSpriteMap[x+","+y];
     },
-    _findWinValue:function(x,y){//第x行 第y列
+    _findPanValue:function(x,y){//第x行 第y列
         return this.panArray[x+3*y];
     },
     _giveMePositionByXY:function(x,y){
@@ -97,6 +94,29 @@ var PanLayer = qc.Layer.extend({
 
         return allP;
 
+    },
+    initPanArray:function(){
+        this.panArray = [
+            0,0,0,
+            0,0,0,
+            0,0,0
+        ];
+        for(var i=0;i<5;i++){
+            var rx = Math.floor(Math.random()*3);
+            var ry = Math.floor(Math.random()*3);
+            this._relectPanValue(rx,ry);
+            /*var allP = this._findAllSideIndex(qc.p(rx,ry));
+            for(var j=0;j<allP.length;j++){
+                var allPItem = allP[i];
+                this._relectPanValue(allPItem.x,allPItem.y);
+            }*/
+        }
+        console.log(this.panArray);
+    },
+    _relectPanValue:function(x,y){
+        if(typeof this._findPanValue(x,y) !="undefined"){
+            this.panArray[x+3*y]=!this.panArray[x+3*y];
+        }
     }
 });
 

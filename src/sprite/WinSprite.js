@@ -3,17 +3,17 @@ var WinSprite = qc.Sprite.extend({
     closeFrame:null,
     mySprite:null,
     isOpenFlag:null,
-    init:function(isOpen){
-        this.isOpenFlag = isOpen;
-        this.initSprite(isOpen);
+    init:function(openFlag){
+        this.isOpenFlag = openFlag;
+        this.initSprite(openFlag);
     },
-    initSprite:function(isOpen){
+    initSprite:function(openFlag){
         var frameCache = qc.SpriteFrameCache._getInstance();
         frameCache.addSpriteFrames(res.fishplist,res.fishes);
         this.openFrame = frameCache.getSpriteFrame("window-open.png");
         this.closeFrame = frameCache.getSpriteFrame("window-close.png");
 
-        if(isOpen){
+        if(openFlag==0){
             this.mySprite = qc.Sprite.create(this.openFrame);
         }else{
             this.mySprite = qc.Sprite.create(this.closeFrame);
@@ -22,14 +22,14 @@ var WinSprite = qc.Sprite.extend({
     },
     reflectFlag:function(){
         this.isOpenFlag = !this.isOpenFlag;
-        if(this.isOpenFlag){
+        if(this.isOpenFlag==0){
             this.mySprite.setSpriteFrame(this.openFrame);
         }else{
             this.mySprite.setSpriteFrame(this.closeFrame);
         }
     },
     isOpen:function(){
-        return this.isOpenFlag;
+        return this.isOpenFlag==0;
     }
 });
 WinSprite.create = function(isOpen){

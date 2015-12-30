@@ -7,6 +7,8 @@ var GameLayer = qc.Layer.extend({
 
     hasWin:false,
 
+    clickNum:0,
+
     init:function(){
         this.winSize = qc.director.getWinSize();
         this.initBg();
@@ -41,7 +43,10 @@ var GameLayer = qc.Layer.extend({
             }
         }
         if(isWin){
-            alert("你赢了！");
+            var _this = this;
+            setTimeout(function(){
+                alert("你赢了！你点击了"+_this.clickNum+"下");
+            });
             this.hasWin = true;
         }
     },
@@ -59,11 +64,10 @@ var GameLayer = qc.Layer.extend({
     onTouchBegan:function(touch,event){
         if(this.hasWin)return;
         var touchLocation = touch.getLocation();
-        qc.log(touchLocation);
         var panLayer = this.panLayer;
         var indexP = panLayer.checkPan(touchLocation);
-        qc.log(indexP);
         if(indexP!=null){
+            this.clickNum ++;
             panLayer.clickIndexP(indexP);
         }
         this.checkGame();
