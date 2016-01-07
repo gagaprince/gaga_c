@@ -8,11 +8,11 @@
         <jscomp compilationLevel="simple" 
                 warning="quiet"
                 debug="false" 
-                output=".\publish\html5\game.min.js"
+                output=".\publish\html5\main.min.js"
                 languagein="ECMASCRIPT5"
                 
                 >
-            <sources dir=".\frameworks\gaga_c\">
+            <!--<sources dir=".\frameworks\gaga_c\">
                 <file name="QCClass.js"/>
                 <file name="QCDirector.js"/>
                 <file name="QCBoot.js"/>
@@ -42,7 +42,7 @@
                 <file name="QCRepeatForever.js"/>
                 <file name="QCRotateTo.js"/>
                 <file name="QCSequence.js"/>
-            </sources>
+            </sources>-->
             <sources dir=".\">
                 <file name="src/resource.js"/>
                 <file name="src/sprite/WinSprite.js"/>
