@@ -8,11 +8,11 @@
         <jscomp compilationLevel="simple" 
                 warning="quiet"
                 debug="false" 
-                output=".\publish\html5\main.min.js"
+                output=".\publish\html5\engine.min.js"
                 languagein="ECMASCRIPT5"
                 
                 >
-            <!--<sources dir=".\frameworks\gaga_c\">
+            <sources dir=".\frameworks\gaga_c\">
                 <file name="QCClass.js"/>
                 <file name="QCDirector.js"/>
                 <file name="QCBoot.js"/>
@@ -21,6 +21,8 @@
                 <file name="QCNode.js"/>
                 <file name="QCScene.js"/>
                 <file name="QCSprite.js"/>
+                <file name="QCLabel.js"/>
+
                 <file name="QCSpriteFrame.js"/>
                 <file name="QCSpriteFrameCache.js"/>
                 <file name="QCSAXParser.js"/>
@@ -33,7 +35,6 @@
                 <file name="QCEventListener.js"/>
                 <file name="QCEventManager.js"/>
                 <file name="QCAction.js"/>
-                <file name="QCScaleTo.js"/>
                 <file name="QCActionManager.js"/>
                 <file name="QCAnimation.js"/>
                 <file name="QCAnimate.js"/>
@@ -41,9 +42,10 @@
                 <file name="QCMoveTo.js"/>
                 <file name="QCRepeatForever.js"/>
                 <file name="QCRotateTo.js"/>
+                <file name="QCScaleTo.js"/>
                 <file name="QCSequence.js"/>
-            </sources>-->
-            <sources dir=".\">
+            </sources>
+           <!-- <sources dir=".\">
                 <file name="src/resource.js"/>
                 <file name="src/sprite/WinSprite.js"/>
                 <file name="src/layer/PanLayer.js"/>
@@ -51,7 +53,7 @@
                 <file name="src/scene/GameScene.js"/>
                 <file name="src/AI/resolveAi.js"/>
                 <file name="main.js"/>
-            </sources>
+            </sources>-->
         </jscomp>
     </target>
 </project>
