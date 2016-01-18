@@ -1,96 +1,65 @@
 var res = {
-    mapbg1: "res/images/map_bg0.png",
-    roleimg:"res/images/role_big0.png",
-    startmenu:"res/images/menu0.png",
-    startmenuplist:"res/plist/menu0.plist",
-    startui:"res/images/ui0.png",
-    startuiplist:"res/plist/ui0.plist",
-    petnum:"res/images/pet_num.png",
-    bullet_lv:"res/images/bullet_lv.png",
-    bullet_lv_plist:"res/plist/bullet_lv.plist",
-    cj_plist:"res/plist/cj.plist",
-    cjimg:"res/images/cj.png",
-    spimg:"res/images/sp_all.png",
-    spplist:"res/plist/sp_all.plist",
-    font_m:"res/images/game_m.png",
-    num_ji:"res/images/num_x0.png",
-    num_ji0:"res/images/num_jl0.png",
-    daojuimg:"res/images/add_image.png",
-    daoju_plist:"res/plist/add_image.plist",
-    pauseimg:"res/images/pause_all.png",
-    pause_plist:"res/plist/pause_all.plist",
-    effectimg:"res/images/effect0.png",
-    effectplist:"res/plist/effect0.plist",
-    effect2img:"res/images/cc_efx.png",
-    effect2plist:"res/plist/cc_efx.plist",
-    cjuiimg:"res/images/ui_ts.png",
-    cjuiplist:"res/plist/ui_ts.plist"
+    smallPeople1:"res/images/404.png",
+    smallPeople2:"res/images/405.png",
+    smallPeople3:"res/images/406.png",
+    smallPeople4:"res/images/407.png",
+    smallPeople5:"res/images/408.png",
+    smallPeople6:"res/images/409.png",
+    smallPeople7:"res/images/410.png",
+    smallPeople8:"res/images/411.png",
+    smallPeople9:"res/images/412.png",
+    smallPeople10:"res/images/413.png",
+    smallPeople11:"res/images/414.png",
+    smallPeople12:"res/images/415.png",
+    smallPeople13:"res/images/416.png",
+    smallPeople14:"res/images/417.png",
+    smallPeople15:"res/images/418.png",
+    smallPeople16:"res/images/419.png",
+    smallPeople17:"res/images/420.png",
+    smallPeople18:"res/images/421.png",
+    smallPeople19:"res/images/422.png",
+    smallPeople20:"res/images/423.png",
+    smallPeople21:"res/images/424.png",
+    smallPeople22:"res/images/425.png",
+    smallPeople23:"res/images/426.png",
+    smallPeople24:"res/images/427.png",
+    smallPeople25:"res/images/428.png",
+    smallPeople26:"res/images/429.png",
+    smallPeople27:"res/images/430.png",
+    smallPeople28:"res/images/431.png",
+    smallPeople29:"res/images/432.png",
+    smallPeople30:"res/images/433.png",
+    smallPeople31:"res/images/434.png"
 };
 var start_resources=[
-    res.daojuimg,
-    res.daoju_plist
-];
-var shop_resources=[
-    res.bullet_lv,
-    res.bullet_lv_plist
-];
-var cj_resources=[
-    res.cj_plist,
-    res.cjimg
-];
-var game_resources=[
-    res.bullet_lv_plist,
-    res.bullet_lv,
-    res.spplist,
-    res.spimg,
-    res.daoju_plist,
-    res.daojuimg,
-    res.pause_plist,
-    res.pauseimg,
-    res.effectplist,
-    res.effectimg,
-    res.effect2plist,
-    res.effect2img
-];
-var gameover_resources=[
-    res.cjuiplist,
-    res.cjuiimg
-];
-var g_resources = [
-    //image
-    res.mapbg1,
-    res.roleimg,
-    res.startmenu,
-    res.startui,
-    res.petnum,
-    res.bullet_lv,
-    res.cjimg,
-    res.spimg,
-    res.num_ji,
-    res.num_ji0,
-    res.font_m,
-    res.daojuimg,
-    res.pauseimg,
-    res.effectimg,
-    res.effect2img,
-    res.cjuiimg,
-    //plist
-    res.startmenuplist,
-    res.startuiplist,
-    res.bullet_lv_plist,
-    res.cj_plist,
-    res.spplist,
-    res.daoju_plist,
-    res.pause_plist,
-    res.effectplist,
-    res.effect2plist,
-    res.cjuiplist
-    //fnt
-    //tmx
-
-    //bgm
-
-    //effect
-
-    // ogg
+    res.smallPeople1,
+    res.smallPeople2,
+    res.smallPeople3,
+    res.smallPeople4,
+    res.smallPeople5,
+    res.smallPeople6,
+    res.smallPeople7,
+    res.smallPeople8,
+    res.smallPeople9,
+    res.smallPeople10,
+    res.smallPeople11,
+    res.smallPeople12,
+    res.smallPeople13,
+    res.smallPeople14,
+    res.smallPeople15,
+    res.smallPeople16,
+    res.smallPeople17,
+    res.smallPeople18,
+    res.smallPeople19,
+    res.smallPeople20,
+    res.smallPeople22,
+    res.smallPeople23,
+    res.smallPeople24,
+    res.smallPeople25,
+    res.smallPeople26,
+    res.smallPeople27,
+    res.smallPeople28,
+    res.smallPeople29,
+    res.smallPeople30,
+    res.smallPeople31,
 ];
