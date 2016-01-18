@@ -29,7 +29,8 @@ var res = {
     smallPeople28:"res/images/431.png",
     smallPeople29:"res/images/432.png",
     smallPeople30:"res/images/433.png",
-    smallPeople31:"res/images/434.png"
+    smallPeople31:"res/images/434.png",
+    background:"res/images/background.png"
 };
 var start_resources=[
     res.smallPeople1,
@@ -62,4 +63,5 @@ var start_resources=[
     res.smallPeople29,
     res.smallPeople30,
     res.smallPeople31,
+    res.background
 ];
