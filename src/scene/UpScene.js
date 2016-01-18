@@ -11,13 +11,12 @@ var UpLayer = qc.Layer.extend({
         this.bgLayer.addChild(this.bgLayer);
     }
 });
-UpLayer.create = function(){
-    var layer = new UpLayer();
-    layer.init();
-    return layer;
-}
+
 var UpScene = qc.Scene.extend({
-    init:function(){
-        
+    onEnter:function(){
+        this._super();
+        var layer = new UpLayer();
+        layer.init();
+        this.addChild(layer);
     }
 });
