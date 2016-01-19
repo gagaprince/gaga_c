@@ -34,6 +34,10 @@ var UpLayer = qc.Layer.extend({
     },
     initListener:function(){
         var _this = this;
+        var width = $("#gameCanvas").width();
+        var height = $("#gameCanvas").height();
+        $(".in").height(height*0.2);
+        $("#inText").width(width*0.8).show();
         $("#inText").on("input",function(){
             var text = $(this).val();
             _this.peopleLayer.add(text);
