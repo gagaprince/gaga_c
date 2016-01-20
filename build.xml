@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="Javascript compress project" basedir="D:\work\front\qunar_c" default="compile">
+<project name="Javascript compress project" basedir="D:\work\myselfwork\gaga_c" default="compile">
 
     <taskdef name="jscomp" classname="com.google.javascript.jscomp.ant.CompileTask"
              classpath="./lib/compiler-1.7.jar"/>
@@ -12,7 +12,7 @@
                 languagein="ECMASCRIPT5"
                 
                 >
-            <sources dir=".\frameworks\qunar-c\">
+            <sources dir=".\frameworks\gaga_c\">
                 <file name="QCClass.js"/>
                 <file name="QCDirector.js"/>
                 <file name="QCBoot.js"/>
@@ -25,6 +25,7 @@
                 <file name="QCSpriteFrameCache.js"/>
                 <file name="QCSAXParser.js"/>
                 <file name="QCLayer.js"/>
+                <file name="QCLabel.js"/>
                 <file name="QCTexture2D.js"/>
                 <file name="QCTextureCache.js"/>
                 <file name="QCLoaders.js"/>
@@ -43,12 +44,12 @@
                 <file name="QCRotateTo.js"/>
                 <file name="QCSequence.js"/>
             </sources>
-            <sources dir=".\">
+<!--            <sources dir=".\">
                 <file name="src/resource.js"/>
                 <file name="src/scene/LoadScene.js"/>
                 <file name="src/scene/TestScene.js"/>
                 <file name="main.js"/>
-            </sources>
+            </sources>-->
         </jscomp>
     </target>
 </project>
