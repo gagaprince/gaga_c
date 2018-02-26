@@ -1,0 +1,15 @@
+{
+  "name": "gc2d",
+  "version": "1.0.2",
+  "description": "a game engine for html5!",
+  "author": "gagaprince <923731573@qq.com>",
+  "scripts": {
+  },
+  "license": "MIT",
+  "dependencies": {
+
+  },
+  "devDependencies": {
+
+  }
+}

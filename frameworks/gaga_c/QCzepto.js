@@ -1,3 +1,4 @@
+var qc = require('./classes/QCClass.js');
 //类jq选择框架
 qc.$ = function (x) {
     var parent = (this == qc) ? document : this;

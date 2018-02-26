@@ -1,3 +1,4 @@
+var qc = require('./classes/QCClass.js');
 qc._loadingImage="";//这里是loading图片地址 可以是base64
 qc.newElement = function (x) {//新建一个元素
     return document.createElement(x);
