@@ -21,7 +21,6 @@ qc.EventManager = {
         this._listeners.push(listener);
     },
     removeListener: function (listener) {
-        qc.log(listener)
         if (listener == null)
             return;
         var localListeners = this._listeners;
@@ -208,7 +207,6 @@ qc.EventManager = {
         if(supportTouches) {
             //register canvas touch event
             qc._addEventListener(element,"touchstart", function (event) {
-                qc.log("touchstart")
                 if (!event.changedTouches) return;
                 var pos = selfPointer.getHTMLElementPosition(element);
                 pos.left -= document.body.scrollLeft;
@@ -220,7 +218,6 @@ qc.EventManager = {
             }, false);
 
             qc._addEventListener(element, "touchmove", function (event) {
-                qc.log("touchstart")
                 if (!event.changedTouches) return;
                 var pos = selfPointer.getHTMLElementPosition(element);
                 pos.left -= document.body.scrollLeft;

@@ -687,7 +687,7 @@ qc._initSys = function (config, CONFIG_KEY) {
 
 
     var capabilities = sys.capabilities = {"canvas": true};
-    if (docEle['ontouchstart'] !== undefined || nav.msPointerEnabled)
+    if (docEle['ontouchstart'] !== undefined || doc['ontouchstart']!== undefined || nav.msPointerEnabled)
         capabilities["touches"] = true;
     else if (docEle['onmouseup'] !== undefined)
         capabilities["mouse"] = true;

@@ -23,7 +23,7 @@ qc._imgLoader = {
         });
     }
 };
-qc.loader.register(["png", "jpg", "bmp","jpeg","gif", "ico"], qc._imgLoader);
+qc.loader.register(["png", "jpg", "bmp","jpeg","gif", "ico","webp"], qc._imgLoader);
 
 qc._plistLoader = {
     load : function(realUrl, url, res, cb){
