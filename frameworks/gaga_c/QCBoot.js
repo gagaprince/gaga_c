@@ -839,6 +839,33 @@ qc._setup = function (el, width, height) {
 //    qc.saxParser = new qc.SAXParser();
 //    qc.plistParser = new qc.PlistParser();
 };
+
+qc._setupVue = function (el) {
+    if (qc._setupCalled) return;
+    else qc._setupCalled = true;
+    var win = window;
+    win.requestAnimFrame = win.requestAnimationFrame ||
+        win.webkitRequestAnimationFrame ||
+        win.mozRequestAnimationFrame ||
+        win.oRequestAnimationFrame ||
+        win.msRequestAnimationFrame;
+    var element = qc.$(el) || qc.$('#' + el);
+    var localCanvas;
+    if (element.tagName == "CANVAS") {
+        localCanvas = qc._canvas = element;
+    }
+    qc._renderContext = localCanvas.getContext("2d");
+    qc._mainRenderContextBackup = qc._renderContext;
+    qc._renderContext.translate(0, localCanvas.height);
+    //qc._drawingUtil = qc.DrawingPrimitiveCanvas ? new qc.DrawingPrimitiveCanvas(qc._renderContext) : null;
+
+    qc._gameDiv = null;
+    // Director
+    qc.EventManager.registerSystemEvent(qc._canvas);
+    qc.director = qc.Director._getInstance();
+    qc.winSize = qc.director.getWinSize();
+};
+
 qc.game = {
     DEBUG_MODE_NONE: 0,
     DEBUG_MODE_INFO: 1,
@@ -936,6 +963,24 @@ qc.game = {
                 this.removeEventListener('load', arguments.callee, false);
                 _run();
             }, false);
+    },
+
+    runVue: function(id){
+        var self = this;
+        var _run = function () {
+            if (id) {
+                self.config[self.CONFIG_KEY.id] = id;
+            }
+            if (qc._supportRender) {
+                qc._setupVue(self.config[self.CONFIG_KEY.id]);
+                self._runMainLoop();
+                self.onStart();
+                self._checkPrepare = setInterval(function () {
+                    clearInterval(self._checkPrepare);
+                }, 10);
+            }
+        };
+        _run();
     },
 
     _initConfig: function () {
