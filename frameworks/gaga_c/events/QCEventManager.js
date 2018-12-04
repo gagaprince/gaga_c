@@ -165,7 +165,7 @@ qc.EventManager = {
         var rh = (top+posh-ty)/posh*winh;
         return {x:rw,y:rh};
     },
-    registerSystemEvent:function(element){
+    registerSystemEvent:function(element,unpreDefault){
         var selfPointer = this;
         var supportMouse = ('mouse' in qc.sys.capabilities), supportTouches = ('touches' in qc.sys.capabilities);
         //register touch event
@@ -213,7 +213,9 @@ qc.EventManager = {
                 pos.top -= document.body.scrollTop;
                 selfPointer.handleTouchesBegin(selfPointer.getTouchesByEvent(event, pos));
                 event.stopPropagation();
-                event.preventDefault();
+                if(!unpreDefault){
+                    event.preventDefault();
+                }
                 element.focus();
             }, false);
 
@@ -224,7 +226,9 @@ qc.EventManager = {
                 pos.top -= document.body.scrollTop;
                 selfPointer.handleTouchesMove(selfPointer.getTouchesByEvent(event, pos));
                 event.stopPropagation();
-                event.preventDefault();
+                if(!unpreDefault){
+                    event.preventDefault();
+                }
             }, false);
 
             qc._addEventListener(element, "touchend", function (event) {
@@ -234,7 +238,9 @@ qc.EventManager = {
                 pos.top -= document.body.scrollTop;
                 selfPointer.handleTouchesEnd(selfPointer.getTouchesByEvent(event, pos));
                 event.stopPropagation();
-                event.preventDefault();
+                if(!unpreDefault){
+                    event.preventDefault();
+                }
             }, false);
         }
     },

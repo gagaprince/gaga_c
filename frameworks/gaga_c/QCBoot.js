@@ -840,7 +840,7 @@ qc._setup = function (el, width, height) {
 //    qc.plistParser = new qc.PlistParser();
 };
 
-qc._setupVue = function (el) {
+qc._setupVue = function (el,unpreDefault) {
     if (qc._setupCalled) return;
     else qc._setupCalled = true;
     var win = window;
@@ -861,7 +861,7 @@ qc._setupVue = function (el) {
 
     qc._gameDiv = null;
     // Director
-    qc.EventManager.registerSystemEvent(qc._canvas);
+    qc.EventManager.registerSystemEvent(qc._canvas,unpreDefault);
     qc.director = qc.Director._getInstance();
     qc.winSize = qc.director.getWinSize();
 };
@@ -965,14 +965,14 @@ qc.game = {
             }, false);
     },
 
-    runVue: function(id){
+    runVue: function(id,unpreDefault){
         var self = this;
         var _run = function () {
             if (id) {
                 self.config[self.CONFIG_KEY.id] = id;
             }
             if (qc._supportRender) {
-                qc._setupVue(self.config[self.CONFIG_KEY.id]);
+                qc._setupVue(self.config[self.CONFIG_KEY.id],unpreDefault);
                 self._runMainLoop();
                 self.onStart();
                 self._checkPrepare = setInterval(function () {
