@@ -299,7 +299,7 @@ qc.Node = qc.Class.extend({//qcNode 继承于 Class类
                     if (cleanup)
                         node.cleanup();
                     // set parent nil at the end
-                    node.parent = null;
+                    node._parent = null;
                 }
             }
             this._children.length = 0;
@@ -340,7 +340,7 @@ qc.Node = qc.Class.extend({//qcNode 继承于 Class类
         }
         if (doCleanup)
             child.cleanup();
-        child.parent = null;
+        child._parent = null;
         qc.arrayRemoveObject(this._children, child);
     },
     onExit: function () {
