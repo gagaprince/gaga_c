@@ -5,6 +5,7 @@ qc.Label = qc.Sprite.extend({
     _isUpdate:false,
     _fillColorStr:"rgba(0,0,0,255)",
     _displayedOpacity:255,
+    _textAlign:'center',
     ctor:function(str,fontstyle,fontsize){
         this._super();
         this._selfString = str;
@@ -23,6 +24,9 @@ qc.Label = qc.Sprite.extend({
         this._fillColorStr = "rgba("+color.r+","+color.g+","+color.b+","+this._displayedOpacity/255+")";
         this._isUpdate = true;
     },
+    setTextAlign:function(text){
+        this._textAlign = text;
+    },
     draw:function(ctx){
         if (!this._selfString || this._selfString == "")
             return;
@@ -37,6 +41,7 @@ qc.Label = qc.Sprite.extend({
         if (this._selfString.length != 0) {
             ctx.font = this._fontSize+"px "+this._fontStyle;
             ctx.fillStyle = this._fillColorStr;
+            ctx.textAlign = this._textAlign;
             ctx.fillText(this._selfString,0,0);
         }
         ctx.restore();
